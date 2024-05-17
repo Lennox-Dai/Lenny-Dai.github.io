@@ -14,26 +14,26 @@
   
 
   
-  <title>汇编语言8：输入输出程序设计 | Vitamind的私货博客（欢迎投喂七宫图片）</title>
+  <title>汇编语言9：BIOS和DOSz中断 | Vitamind的私货博客（欢迎投喂七宫图片）</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="../../../../css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="../../../../css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="汇编语言8：输入输出程序设计 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   为什么使用DMA方式：  减少大批量数据传输时的cpu的开销 解决高速IO设备可能丢失数据问题，满足IO数据交换速度要求   DMA方式数据传输特点：  以数据块为单元 主要用于告诉的IO设备 IO和CPU竞争使用寄存器   DMA数据传送控制过程：  数据传输前，CPU对DMA控制器中控制寄存器初始化">
+  <meta name="description" content="汇编语言9：BIOS和DOSz中断 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="汇编语言8：输入输出程序设计">
-<meta property="og:url" content="https://lenny-dai.github.io/2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%808%EF%BC%9A%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:title" content="汇编语言9：BIOS和DOSz中断">
+<meta property="og:url" content="https://lenny-dai.github.io/2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%809%EF%BC%9ABIOS%E5%92%8CDOSz%E4%B8%AD%E6%96%AD/index.html">
 <meta property="og:site_name" content="Vitamind的私货博客（欢迎投喂七宫图片）">
-<meta property="og:description" content="汇编语言8：输入输出程序设计 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   为什么使用DMA方式：  减少大批量数据传输时的cpu的开销 解决高速IO设备可能丢失数据问题，满足IO数据交换速度要求   DMA方式数据传输特点：  以数据块为单元 主要用于告诉的IO设备 IO和CPU竞争使用寄存器   DMA数据传送控制过程：  数据传输前，CPU对DMA控制器中控制寄存器初始化">
+<meta property="og:description" content="汇编语言9：BIOS和DOSz中断 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lenny-dai.github.io/img/slt8.jpg">
-<meta property="article:published_time" content="2024-05-17T14:13:35.000Z">
-<meta property="article:modified_time" content="2024-05-17T14:53:46.218Z">
+<meta property="og:image" content="https://lenny-dai.github.io/img/slt9.jpg">
+<meta property="article:published_time" content="2024-05-17T14:52:37.000Z">
+<meta property="article:modified_time" content="2024-05-17T14:54:27.671Z">
 <meta property="article:author" content="Vitamind">
 <meta property="article:tag" content="课内学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lenny-dai.github.io/img/slt8.jpg">
+<meta name="twitter:image" content="https://lenny-dai.github.io/img/slt9.jpg">
   
     <link rel="alternate" href="../../../../atom.xml" title="Vitamind的私货博客（欢迎投喂七宫图片）" type="application/atom+xml">
   
@@ -192,14 +192,14 @@
        
 
 
-<article id="post-汇编语言8：输入输出程序设计" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-汇编语言9：BIOS和DOSz中断" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clwatgimy000i50vkbpyi38g0">
-        <img src="../../../../img/slt8.jpg" itemprop="image">
+      <a class="article-gallery-img" rel="gallery_clwatgimz000k50vk68nteos7">
+        <img src="../../../../img/slt9.jpg" itemprop="image">
       </a>
     
   </div>
@@ -215,7 +215,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        汇编语言8：输入输出程序设计
+        汇编语言9：BIOS和DOSz中断
       </h1>
     
   
@@ -223,7 +223,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-17T14:13:35.000Z" itemprop="datePublished">2024-05-17</time>
+  <time class="dt-published" datetime="2024-05-17T14:52:37.000Z" itemprop="datePublished">2024-05-17</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -234,7 +234,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            515 词 
+            46 词 
           </div>
         </div>
         
@@ -243,94 +243,9 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="汇编语言8：输入输出程序设计"><a href="#汇编语言8：输入输出程序设计" class="headerlink" title="汇编语言8：输入输出程序设计"></a>汇编语言8：输入输出程序设计</h1><blockquote>
+          <h1 id="汇编语言9：BIOS和DOSz中断"><a href="#汇编语言9：BIOS和DOSz中断" class="headerlink" title="汇编语言9：BIOS和DOSz中断"></a>汇编语言9：BIOS和DOSz中断</h1><blockquote>
 <p>tips：本文不涉及完全的知识梳理，只是个人向的易错点记录</p>
 </blockquote>
-<ul>
-<li><p><strong>为什么使用DMA方式：</strong></p>
-<ol>
-<li>减少大批量数据传输时的cpu的开销</li>
-<li>解决高速IO设备可能丢失数据问题，满足IO数据交换速度要求</li>
-</ol>
-</li>
-<li><p><strong>DMA方式数据传输特点：</strong></p>
-<ol>
-<li>以数据块为单元</li>
-<li>主要用于告诉的IO设备</li>
-<li>IO和CPU竞争使用寄存器</li>
-</ol>
-</li>
-<li><p><strong>DMA数据传送控制过程</strong>：</p>
-<ol>
-<li>数据传输前，CPU对DMA控制器中控制寄存器初始化</li>
-<li>DMA控制器控制设备与存储器直接进行块数据交换</li>
-<li>数据传送结束后，CPU进行后处理</li>
-</ol>
-</li>
-<li><p><strong>SOUND子程序：</strong></p>
-<blockquote>
-<p>注意点：</p>
-<ol>
-<li>先将最后两位置零</li>
-<li>XOR AL, 00000010B</li>
-</ol>
-</blockquote>
-</li>
-<li><p><strong>8259A的中断屏蔽寄存器</strong></p>
-<p><img src="0.png" alt="0"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MOV AL, 11111101B</span><br><span class="line">OUT 21H, AL</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p><strong>软件中断类型：</strong></p>
-<ol>
-<li>程序中的中断指令</li>
-<li>CPU的某些运行结果</li>
-<li>调试程序设置的中断</li>
-</ol>
-</li>
-<li><p><strong>X86内存分配</strong></p>
-<p><img src="1.png" alt="1"></p>
-</li>
-<li><p><strong>设置中断向量&amp;取中断向量：</strong></p>
-<p><img src="2.png" alt="2"></p>
-</li>
-<li><p><strong>中断过程：</strong></p>
-<ol>
-<li><p>中断响应</p>
-<blockquote>
-<p>CPU自动完成如下操作：</p>
-<ol>
-<li>取中断类型号</li>
-<li>标志寄存器入栈</li>
-<li>CS、IP入栈</li>
-<li>IF、TF置零</li>
-<li>转中断服务处理程序入口地址：<ul>
-<li>从中断向量表中取4*N单元的字内容 送 IP</li>
-<li>从中断向量表中取4*N + 2单元的字内容 送 CS</li>
-</ul>
-</li>
-</ol>
-</blockquote>
-</li>
-<li><p>中断处理</p>
-</li>
-<li><p>中断返回</p>
-</li>
-</ol>
-</li>
-<li><p><strong>一般中断处理程序设计格式：</strong></p>
-<ol>
-<li>保存现场</li>
-<li>开中断</li>
-<li>中断处理程序主体部分</li>
-<li>中断结束</li>
-<li>关中断</li>
-<li>恢复现场</li>
-<li>中断返回（IRET）</li>
-</ol>
-</li>
-</ul>
 
         
       </div>
@@ -343,27 +258,22 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="../%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%809%EF%BC%9ABIOS%E5%92%8CDOSz%E4%B8%AD%E6%96%AD/"
-      title="汇编语言9：BIOS和DOSz中断"
+  <a class="article-nav-btn left  disabled "
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
-      
-        汇编语言9：BIOS和DOSz中断
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="../%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%807%EF%BC%9A%E9%AB%98%E7%BA%A7%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%8A%80%E6%9C%AF/"
-      title="汇编语言7：高级汇编语言技术"
+      href="../%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%808%EF%BC%9A%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"
+      title="汇编语言8：输入输出程序设计"
      >
 
     <p class="title-text">
       
-        汇编语言7：高级汇编语言技术
+        汇编语言8：输入输出程序设计
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
