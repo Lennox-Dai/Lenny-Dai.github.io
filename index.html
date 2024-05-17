@@ -14,21 +14,21 @@
   
 
   
-  <title>Hexo</title>
+  <title>Vitamind的私货博客（欢迎投喂七宫图片）</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Vitamind的私货博客（欢迎投喂七宫图片）">
 <meta property="og:url" content="https://lenny-dai.github.io/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Vitamind的私货博客（欢迎投喂七宫图片）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Vitamind">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Vitamind的私货博客（欢迎投喂七宫图片）" type="application/atom+xml">
   
   
     <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
@@ -66,7 +66,7 @@
         <div class="dot"></div>
         <div class="dot"></div>
       </div>
-      <div>Hexo </div>
+      <div>Vitamind的私货博客（欢迎投喂七宫图片） </div>
     </a>
   </nav>
   <nav id="main-nav">
@@ -216,7 +216,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            14 词 
+            608 词 
           </div>
         </div>
         
@@ -228,6 +228,78 @@
           <div class="truncate-text">
             
               汇编语言4：汇编语言程序格式
+段定义伪操作
+
+
+
+组合类型：
+PRIVATE:不合并
+PUBLIC:合并，可能有空隙
+STACK:合并，无空隙
+COMMON:覆盖
+
+
+定位类型：
+PARA:小段开始
+BYTE:任意字节开始
+WORD:偶数地址开始
+DWORD:
+PAGE:
+
+
+使用类型：（386以后才有）
+类别：（给出组成段组的类型名）
+同类别的段装配在相邻的位置，组成段组
+
+
+
+
+
+简化段定义伪操作：使用简化段伪操作时，必须在程序一开始先用.MODEL
+
+EQU：
+
+不分配占用存储单元，只是相当定义了一个常数的数值
+不允许重复定义
+
+
+EVEN &amp;&amp; ALIGN：
+
+
+even:使下一个变量或指令地址开始于偶字节地址
+
+align:ALIGN boundary，当boundary取2时正好是even
+
+
+
+
+RADIX：
+
+格式：RADIX 16
+用来指定默认数字的进制
+
+
+标号（也叫符号地址）三个属性：
+
+段地址
+
+偏移地址
+
+类型（far or near)
+
+
+
+变量三个属性：
+
+段地址
+偏移地址
+类型（Byte, Word…）
+
+
+表达式：
+
+数字表达式
+...
             
           </div>
         
