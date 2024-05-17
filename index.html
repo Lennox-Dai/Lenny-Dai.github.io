@@ -197,7 +197,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%809%EF%BC%9ABIOS%E5%92%8CDOSz%E4%B8%AD%E6%96%AD/">汇编语言9：BIOS和DOSz中断</a>
+        <a class="p-name article-title" href="2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%809%EF%BC%9ABIOS%E5%92%8CDOSz%E4%B8%AD%E6%96%AD/">汇编语言9：BIOS和DOS中断</a>
       </h1>
     
   
@@ -216,7 +216,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            46 词 
+            160 词 
           </div>
         </div>
         
@@ -227,8 +227,26 @@
         
           <div class="truncate-text">
             
-              汇编语言9：BIOS和DOSz中断
+              汇编语言9：BIOS和DOS中断
 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录
+
+
+键盘中断：
+
+硬件中断（09H）：
+
+如果有键按下，且中断也允许，向CPU发中断， 转换成字符码，并将字符码和扫描码存在内存缓冲区里
+
+
+软件中断（DOS21h）（BIOS16h）
+
+应用程序使用内存缓冲区的字符码和扫描码
+
+
+
+
+缓冲区是先进先出的循环队列：
+
 
 
             
