@@ -311,7 +311,7 @@ tips：本文不涉及完全的知识梳理，只是个人向的易错点记录
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            515 词 
+            991 词 
           </div>
         </div>
         
@@ -335,7 +335,7 @@ tips：本文不涉及完全的知识梳理，只是个人向的易错点记录
 DMA方式数据传输特点：
 
 以数据块为单元
-主要用于告诉的IO设备
+主要用于高速的IO设备
 IO和CPU竞争使用寄存器
 
 
@@ -354,38 +354,7 @@ SOUND子程序：
 XOR AL, 00000010B
 
 
-
-8259A的中断屏蔽寄存器
-
-12MOV AL, 11111101BOUT 21H, AL
-
-
-
-软件中断类型：
-
-程序中的中断指令
-CPU的某些运行结果
-调试程序设置的中断
-
-
-X86内存分配
-
-
-设置中断向量&amp;取中断向量：
-
-
-中断过程：
-
-中断响应
-
-CPU自动完成如下操作：
-
-取中断类型号
-标志寄存器入栈
-CS、IP入栈
-IF、TF置零
-转中断服务处理程序入口地址：
-从中断向量表中取4*N单元的...
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748title final3data segmentdata endsstack segment at 0A000h    dw 128 dup(0)    tos label wordstack endscode segment    assu...
             
           </div>
         
