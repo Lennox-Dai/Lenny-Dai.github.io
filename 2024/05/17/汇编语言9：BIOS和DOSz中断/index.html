@@ -20,16 +20,16 @@
   <link rel="preload" href="../../../../css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="../../../../css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="汇编语言9：BIOS和DOS中断 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   键盘中断：  硬件中断（09H）：  如果有键按下，且中断也允许，向CPU发中断， 转换成字符码，并将字符码和扫描码存在内存缓冲区里   软件中断（DOS21h）（BIOS16h）  应用程序使用内存缓冲区的字符码和扫描码     缓冲区是先进先出的循环队列：">
+  <meta name="description" content="汇编语言9：BIOS和DOS中断 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   键盘中断：  硬件中断（09H）：  如果有键按下，且中断也允许，向CPU发中断， 转换成字符码，并将字符码和扫描码存在内存缓冲区里   软件中断（DOS21h）（BIOS16h）  应用程序使用内存缓冲区的字符码和扫描码     缓冲区是先进先出的循环队列：  来个主界面的例子： 123456789">
 <meta property="og:type" content="article">
 <meta property="og:title" content="汇编语言9：BIOS和DOS中断">
 <meta property="og:url" content="https://lenny-dai.github.io/2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%809%EF%BC%9ABIOS%E5%92%8CDOSz%E4%B8%AD%E6%96%AD/index.html">
 <meta property="og:site_name" content="Vitamind的私货博客（欢迎投喂七宫图片）">
-<meta property="og:description" content="汇编语言9：BIOS和DOS中断 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   键盘中断：  硬件中断（09H）：  如果有键按下，且中断也允许，向CPU发中断， 转换成字符码，并将字符码和扫描码存在内存缓冲区里   软件中断（DOS21h）（BIOS16h）  应用程序使用内存缓冲区的字符码和扫描码     缓冲区是先进先出的循环队列：">
+<meta property="og:description" content="汇编语言9：BIOS和DOS中断 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   键盘中断：  硬件中断（09H）：  如果有键按下，且中断也允许，向CPU发中断， 转换成字符码，并将字符码和扫描码存在内存缓冲区里   软件中断（DOS21h）（BIOS16h）  应用程序使用内存缓冲区的字符码和扫描码     缓冲区是先进先出的循环队列：  来个主界面的例子： 123456789">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lenny-dai.github.io/img/slt9.jpg">
 <meta property="article:published_time" content="2024-05-17T14:52:37.000Z">
-<meta property="article:modified_time" content="2024-05-17T15:38:08.739Z">
+<meta property="article:modified_time" content="2024-05-18T14:14:08.106Z">
 <meta property="article:author" content="Vitamind">
 <meta property="article:tag" content="课内学习">
 <meta name="twitter:card" content="summary">
@@ -198,7 +198,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clwc16in9001430vk110bcuqn">
+      <a class="article-gallery-img" rel="gallery_clwc6w8ug000dgcvk8sgn1a1t">
         <img src="../../../../img/slt9.jpg" itemprop="image">
       </a>
     
@@ -234,7 +234,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            160 词 
+            1.2k 词 
           </div>
         </div>
         
@@ -263,6 +263,8 @@
 </li>
 <li><p><strong>缓冲区是先进先出的循环队列：</strong></p>
 </li>
+<li><p><strong>来个主界面的例子：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">title final7</span><br><span class="line"></span><br><span class="line">clrscr macro lu, rd, fb</span><br><span class="line">    mov ax, 0600h</span><br><span class="line">    mov cx, lu</span><br><span class="line">    mov dx, rd</span><br><span class="line">    mov bh, fb</span><br><span class="line">    int 10h</span><br><span class="line">endm</span><br><span class="line"></span><br><span class="line">cursor macro row, col</span><br><span class="line">    mov bh, 0</span><br><span class="line">    mov dh, row</span><br><span class="line">    mov dl, col</span><br><span class="line">    mov ah, 2</span><br><span class="line">    int 10h</span><br><span class="line">endm</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">    d1 db &#x27;MAIN MENU&#x27;, 0dh, 0ah, &#x27;$&#x27;</span><br><span class="line">    d2 db &#x27;(1) Edit&#x27;,0dh,0ah,&#x27;$&#x27;</span><br><span class="line">    d3 db &#x27;(2) Save&#x27;,0dh,0ah,&#x27;$&#x27;</span><br><span class="line">    d4 db &#x27;(3) Print&#x27;,0dh,0ah,&#x27;$&#x27;</span><br><span class="line">    d5 db &#x27;(4) Quit&#x27;,0dh,0ah,&#x27;$&#x27;</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment at 0A000h</span><br><span class="line">    dw 128 dup(0)</span><br><span class="line">    tos label word</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    assume ds:data, ss:stack, cs:code</span><br><span class="line">    main proc far</span><br><span class="line">        mov ax, stack</span><br><span class="line">        mov ss, ax</span><br><span class="line">        mov sp, offset tos</span><br><span class="line">        mov ax, data</span><br><span class="line">        mov ds, ax</span><br><span class="line"></span><br><span class="line">        clrscr 0, 184fh, 07h</span><br><span class="line">        clrscr 0614h, 142eh, 4Eh</span><br><span class="line"></span><br><span class="line">        cursor 10, 26</span><br><span class="line">        mov dx, offset d1</span><br><span class="line">        mov ah, 9h</span><br><span class="line">        int 21h</span><br><span class="line"></span><br><span class="line">        cursor 12, 26</span><br><span class="line">        mov dx, offset d2</span><br><span class="line">        mov ah, 9h</span><br><span class="line">        int 21h</span><br><span class="line"></span><br><span class="line">        cursor 14, 26</span><br><span class="line">        mov dx, offset d3</span><br><span class="line">        mov ah, 9h</span><br><span class="line">        int 21h</span><br><span class="line"></span><br><span class="line">        cursor 16, 26</span><br><span class="line">        mov dx, offset d4</span><br><span class="line">        mov ah, 9h</span><br><span class="line">        int 21h</span><br><span class="line"></span><br><span class="line">        cursor 18, 26</span><br><span class="line">        mov dx, offset d5</span><br><span class="line">        mov ah, 9h</span><br><span class="line">        int 21h</span><br><span class="line"></span><br><span class="line">        find:</span><br><span class="line">            mov ah, 0</span><br><span class="line">            int 16h</span><br><span class="line">            cmp al, 34H</span><br><span class="line">            jne find</span><br><span class="line"></span><br><span class="line">        mov ax, 4c00h</span><br><span class="line">        int 21h</span><br><span class="line">    main endp</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end main</span><br></pre></td></tr></table></figure></li>
 </ul>
 
         

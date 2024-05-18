@@ -20,16 +20,16 @@
   <link rel="preload" href="../../../../css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="../../../../css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="汇编语言5：循环与分支程序设计 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录 本章背诵内容较少，所以贴出几个典型的程序：   逻辑尺： 1      冒泡排序： 1      折半查找： 1      跳跃表法： 1">
+  <meta name="description" content="汇编语言5：循环与分支程序设计 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录 本章背诵内容较少，所以贴出几个典型的程序：   逻辑尺：  注意点：循环尺是用来右移的， 所有的data段数据用dw来存  1234567891011121314151617181920212223242526272829303132333435363738394041424344title ljcdata">
 <meta property="og:type" content="article">
 <meta property="og:title" content="汇编语言5：循环与分支程序设计">
 <meta property="og:url" content="https://lenny-dai.github.io/2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%805%EF%BC%9A%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%88%86%E6%94%AF%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Vitamind的私货博客（欢迎投喂七宫图片）">
-<meta property="og:description" content="汇编语言5：循环与分支程序设计 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录 本章背诵内容较少，所以贴出几个典型的程序：   逻辑尺： 1      冒泡排序： 1      折半查找： 1      跳跃表法： 1">
+<meta property="og:description" content="汇编语言5：循环与分支程序设计 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录 本章背诵内容较少，所以贴出几个典型的程序：   逻辑尺：  注意点：循环尺是用来右移的， 所有的data段数据用dw来存  1234567891011121314151617181920212223242526272829303132333435363738394041424344title ljcdata">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lenny-dai.github.io/img/slt5.jpg">
 <meta property="article:published_time" content="2024-05-17T12:20:56.000Z">
-<meta property="article:modified_time" content="2024-05-17T12:41:40.726Z">
+<meta property="article:modified_time" content="2024-05-18T13:09:01.000Z">
 <meta property="article:author" content="Vitamind">
 <meta property="article:tag" content="课内学习">
 <meta name="twitter:card" content="summary">
@@ -198,7 +198,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clwc16in5000b30vk69glfj0h">
+      <a class="article-gallery-img" rel="gallery_clwc6w8uf000bgcvk9tig0asu">
         <img src="../../../../img/slt5.jpg" itemprop="image">
       </a>
     
@@ -234,7 +234,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            88 词 
+            1.2k 词 
           </div>
         </div>
         
@@ -249,12 +249,20 @@
 </blockquote>
 <ul>
 <li><p><strong>逻辑尺：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意点：<br>循环尺是用来右移的， 所有的data段数据用dw来存</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">title ljc</span><br><span class="line">data segment</span><br><span class="line">    X dw 1, 2, 3, 4, 5, 6, 7, 8, 9</span><br><span class="line">    Y dw 2, 2, 2, 3, 3, 1, 2, 2, 7</span><br><span class="line">    Z dw 10 dup(?)</span><br><span class="line">    ljc dw 0000000011011100B</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">    dw 128 dup(0)</span><br><span class="line">    tos label word</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    assume ds:data, cs:code, ss:stack</span><br><span class="line">    main proc far</span><br><span class="line">        mov ax, stack</span><br><span class="line">        mov ss, ax</span><br><span class="line">        mov sp, offset tos</span><br><span class="line">        mov ax, data</span><br><span class="line">        mov ds, ax</span><br><span class="line"></span><br><span class="line">        xor bx, bx</span><br><span class="line">        mov cx, 10</span><br><span class="line">        mov dx, ljc</span><br><span class="line"></span><br><span class="line">        next:</span><br><span class="line">            mov ax, X[bx]</span><br><span class="line">            shr dx, 1</span><br><span class="line">            jc subs</span><br><span class="line">            add ax, Y[bx]</span><br><span class="line">            jmp fin</span><br><span class="line">        subs:</span><br><span class="line">            sub ax, Y[bx]</span><br><span class="line">        fin:</span><br><span class="line">            mov Z[bx], ax</span><br><span class="line">            add bx, 2</span><br><span class="line">            loop next</span><br><span class="line"></span><br><span class="line">        mov ax, 4c00h</span><br><span class="line">        int 21h</span><br><span class="line">    main endp</span><br><span class="line">code ends</span><br><span class="line">end main</span><br></pre></td></tr></table></figure>
 
 
 </li>
 <li><p><strong>冒泡排序：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意点：</p>
+<p>IF伪操作很奇怪，在后面条件判断放操作数的时候会神秘报错。。。。</p>
+<p>还是老老实实用cmp吧</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">title bolb</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">    num dw 11</span><br><span class="line">    A dw 2, 3, 5, 1, 3, 6, 9, 3, 2, 7, 10</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment at 0A000h</span><br><span class="line">    dw 128 dup(0)</span><br><span class="line">    tos label word</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    assume ds:data, ss:stack, cs:code</span><br><span class="line">    main proc far</span><br><span class="line">        mov ax, stack </span><br><span class="line">        mov ss, ax</span><br><span class="line">        mov sp, offset tos</span><br><span class="line">        mov ax, data</span><br><span class="line">        mov ds, ax</span><br><span class="line"></span><br><span class="line">        mov cx, num</span><br><span class="line">        dec cx</span><br><span class="line">        out_loop:</span><br><span class="line">            push cx</span><br><span class="line">            push bx</span><br><span class="line">            push ax</span><br><span class="line">            push dx</span><br><span class="line">            mov bx, -2</span><br><span class="line">            add cx, cx</span><br><span class="line">            inner_loop:</span><br><span class="line">                add bx, 2</span><br><span class="line">                cmp bx, cx</span><br><span class="line">                jge jout</span><br><span class="line">                mov ax, A[bx]</span><br><span class="line">                mov dx, A[bx+2]</span><br><span class="line">                cmp ax, dx</span><br><span class="line">                jle inner_loop</span><br><span class="line">                mov A[bx+2], ax</span><br><span class="line">                mov A[bx], dx</span><br><span class="line">                jmp inner_loop</span><br><span class="line">            jout:</span><br><span class="line">                pop dx</span><br><span class="line">                pop ax</span><br><span class="line">                pop bx</span><br><span class="line">                pop cx</span><br><span class="line">        loop out_loop   </span><br><span class="line"></span><br><span class="line">        mov ax, 4c00h</span><br><span class="line">        int 21h</span><br><span class="line">    main endp</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end main</span><br></pre></td></tr></table></figure>
 
 
 </li>
