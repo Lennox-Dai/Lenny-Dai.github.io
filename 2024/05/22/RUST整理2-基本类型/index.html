@@ -14,25 +14,26 @@
   
 
   
-  <title>试着写第一篇博客吧！ | Vitamind的私货博客（欢迎投喂七宫图片）</title>
+  <title>RUST整理2--基本类型 | Vitamind的私货博客（欢迎投喂七宫图片）</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="../../../../css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="../../../../css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="这是一个测试！ 在这儿放张图">
+  <meta name="description" content="RUST整理2–基本类型 数据表示方法：   1_024：十进制数字，下划线是Rust的一个特性，用于增加数字的可读性。这与1024是等价的。 0xff：十六进制表示的数字，等于十进制的255。 0o77：八进制表示的数字，等于十进制的63。 0b1111_1111：二进制表示的数字，等于十进制的255。  12345&#x2F;&#x2F; 修改 &#96;assert!&#96; 让代码工作fn main() &#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="试着写第一篇博客吧！">
-<meta property="og:url" content="https://lenny-dai.github.io/2024/05/17/%E8%AF%95%E7%9D%80%E5%86%99%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%90%A7%EF%BC%81/index.html">
+<meta property="og:title" content="RUST整理2--基本类型">
+<meta property="og:url" content="https://lenny-dai.github.io/2024/05/22/RUST%E6%95%B4%E7%90%862-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Vitamind的私货博客（欢迎投喂七宫图片）">
-<meta property="og:description" content="这是一个测试！ 在这儿放张图">
+<meta property="og:description" content="RUST整理2–基本类型 数据表示方法：   1_024：十进制数字，下划线是Rust的一个特性，用于增加数字的可读性。这与1024是等价的。 0xff：十六进制表示的数字，等于十进制的255。 0o77：八进制表示的数字，等于十进制的63。 0b1111_1111：二进制表示的数字，等于十进制的255。  12345&#x2F;&#x2F; 修改 &#96;assert!&#96; 让代码工作fn main() &#123;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lenny-dai.github.io/img/2.jpg">
-<meta property="article:published_time" content="2024-05-17T03:44:07.000Z">
-<meta property="article:modified_time" content="2024-05-17T04:39:52.933Z">
+<meta property="og:image" content="https://lenny-dai.github.io/img/slt11.jpg">
+<meta property="article:published_time" content="2024-05-22T09:19:37.000Z">
+<meta property="article:modified_time" content="2024-05-22T09:34:27.142Z">
 <meta property="article:author" content="Vitamind">
+<meta property="article:tag" content="课内学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lenny-dai.github.io/img/2.jpg">
+<meta name="twitter:image" content="https://lenny-dai.github.io/img/slt11.jpg">
   
     <link rel="alternate" href="../../../../atom.xml" title="Vitamind的私货博客（欢迎投喂七宫图片）" type="application/atom+xml">
   
@@ -201,14 +202,14 @@
        
 
 
-<article id="post-试着写第一篇博客吧！" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-RUST整理2-基本类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clwktrz1j001j28vk9s3laovy">
-        <img src="../../../../img/2.jpg" itemprop="image">
+      <a class="article-gallery-img" rel="gallery_clwktrz15000128vkhpzz431o">
+        <img src="../../../../img/slt11.jpg" itemprop="image">
       </a>
     
   </div>
@@ -224,7 +225,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        试着写第一篇博客吧！
+        RUST整理2--基本类型
       </h1>
     
   
@@ -232,31 +233,54 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-17T03:44:07.000Z" itemprop="datePublished">2024-05-17</time>
+  <time class="dt-published" datetime="2024-05-22T09:19:37.000Z" itemprop="datePublished">2024-05-22</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    未分类 
+  <a class="meta-cate-link" href="../../../../categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/">专业选修</a>><a class="meta-cate-link" href="../../../../categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/RUST%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">RUST程序设计</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            13 词 
+            506 词 
           </div>
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0/" rel="tag">课内学习</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="这是一个测试！"><a href="#这是一个测试！" class="headerlink" title="这是一个测试！"></a>这是一个测试！</h1><ul>
-<li><p>在这儿放张图</p>
+          <h1 id="RUST整理2–基本类型"><a href="#RUST整理2–基本类型" class="headerlink" title="RUST整理2–基本类型"></a>RUST整理2–基本类型</h1><ol>
+<li><p><strong>数据表示方法：</strong></p>
 <blockquote>
-<p><img src="1.jpg" alt="1"></p>
+<ul>
+<li><code>1_024</code>：十进制数字，下划线是Rust的一个特性，用于增加数字的可读性。这与<code>1024</code>是等价的。</li>
+<li><code>0xff</code>：十六进制表示的数字，等于十进制的<code>255</code>。</li>
+<li><code>0o77</code>：八进制表示的数字，等于十进制的<code>63</code>。</li>
+<li><code>0b1111_1111</code>：二进制表示的数字，等于十进制的<code>255</code>。</li>
+</ul>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改 `assert!` 让代码工作</span></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">v</span> = <span class="number">1_024</span> + <span class="number">0xff</span> + <span class="number">0o77</span> + <span class="number">0b1111_1111</span>;</span><br><span class="line">    <span class="built_in">assert!</span>(v == <span class="number">1597</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
+<li><p><strong>默认浮点数推断是f64</strong></p>
+</li>
+<li><p><strong>Range用法：</strong></p>
+<blockquote>
+<ul>
+<li><p><strong>Range:</strong></p>
+<p><code>Range</code>表示一个半开区间，包括起始值但不包括结束值。</p>
+</li>
+<li><p><strong>RangeInclusive:</strong></p>
+<p><code>RangeInclusive</code>表示一个闭区间，即包括起始值和结束值。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::ops::&#123;Range, RangeInclusive&#125;;</span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="built_in">assert_eq!</span>((<span class="number">1</span>..<span class="number">5</span>), Range&#123; start: <span class="number">1</span>, end: <span class="number">5</span> &#125;);</span><br><span class="line">    <span class="built_in">assert_eq!</span>((<span class="number">1</span>..=<span class="number">5</span>), RangeInclusive::<span class="title function_ invoke__">new</span>(<span class="number">1</span>, <span class="number">5</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
+</blockquote>
+</li>
+</ol>
+<p>- </p>
 
         
       </div>
@@ -271,25 +295,25 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="../%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%801%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
-      title="汇编语言1：基础知识"
+      href="../../24/%E7%BA%BF%E4%B8%8Acv%E8%AF%BE%E7%A8%8B%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+      title="线上cv课程期末复习笔记"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        汇编语言1：基础知识
+        线上cv课程期末复习笔记
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="../hello-world/"
-      title="Hello World"
+      href="../RUST%E6%95%B4%E7%90%861-%E5%8F%98%E9%87%8F%E8%A7%A3%E7%BB%91%E4%B8%8E%E7%BB%91%E5%AE%9A/"
+      title="RUST整理1--变量解绑与绑定"
      >
 
     <p class="title-text">
       
-        Hello World
+        RUST整理1--变量解绑与绑定
         
     </p>
     <i class="fa-solid fa-angle-right"></i>

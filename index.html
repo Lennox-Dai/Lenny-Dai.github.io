@@ -155,17 +155,22 @@
       <div class="category-box">
             <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/">
                 专业选修
-                <div class="category-count">10</div>
+                <div class="category-count">12</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/RUST%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                RUST程序设计
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">
                 汇编语言
                 <div class="category-count">9</div>
+            </a>
+        
+            <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/RUST%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+                RUST程序设计
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/%E7%BA%BF%E4%B8%8A%E8%AF%BE%E7%A8%8B/">
+                线上课程
+                <div class="category-count">1</div>
             </a>
         </div></div></div>
     </div>
@@ -188,6 +193,215 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-线上cv课程期末复习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="2024/05/24/%E7%BA%BF%E4%B8%8Acv%E8%AF%BE%E7%A8%8B%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">线上cv课程期末复习笔记</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-24T13:00:11.000Z" itemprop="datePublished">2024-05-24</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/">专业选修</a>><a class="meta-cate-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/%E7%BA%BF%E4%B8%8A%E8%AF%BE%E7%A8%8B/">线上课程</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            2.2k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0/" rel="tag">课内学习</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              线上cv课程期末复习笔记1. Object detection
+面临的问题：
+
+
+Object of interest might have different spatial locations within the  image 
+They also have different aspect ratios
+A large number of regions would need to be tested
+
+
+
+RCNN:
+
+
+
+方法：
+
+候选区域生成： 一张图像生成1K~2K个候选区域 （采用Selective Search 方法）
+
+特征提取： 对每个候选区域，使用深度卷积网络提取特征 （CNN）
+
+类别判断： 特征送入每一类的SVM 分类器，判别是否属于该类
+
+位置精修： 使用回归器精细修正候选框位置
+
+
+
+缺点：
+
+Slow and hard for real-time detection
+Difficult to optimise
+
+
+
+
+
+YOLO：
+
+
+缺点：
+Weak at detecting groups of objects, YOLO is really...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  with-pic  "
+       style="background-image: url(/img/slt9.jpg)" 
+      href="2024/05/24/%E7%BA%BF%E4%B8%8Acv%E8%AF%BE%E7%A8%8B%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" 
+    >
+       
+      <div class="overlay">
+        <i class="fa-solid fa-angle-right with-pic"></i>
+      </div>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
+<article id="post-RUST整理2-基本类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="2024/05/22/RUST%E6%95%B4%E7%90%862-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/">RUST整理2--基本类型</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-22T09:19:37.000Z" itemprop="datePublished">2024-05-22</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/">专业选修</a>><a class="meta-cate-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/RUST%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">RUST程序设计</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            506 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0/" rel="tag">课内学习</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              RUST整理2–基本类型
+数据表示方法：
+
+
+1_024：十进制数字，下划线是Rust的一个特性，用于增加数字的可读性。这与1024是等价的。
+0xff：十六进制表示的数字，等于十进制的255。
+0o77：八进制表示的数字，等于十进制的63。
+0b1111_1111：二进制表示的数字，等于十进制的255。
+
+12345// 修改 `assert!` 让代码工作fn main() &#123;    let v = 1_024 + 0xff + 0o77 + 0b1111_1111;    assert!(v == 1597);&#125;
+
+
+默认浮点数推断是f64
+
+Range用法：
+
+
+Range:
+Range表示一个半开区间，包括起始值但不包括结束值。
+
+RangeInclusive:
+RangeInclusive表示一个闭区间，即包括起始值和结束值。
+12345use std::ops::&#123;Range, RangeInclusive&#125;;fn main() &#123;    assert_eq!((1..5), Range&#123; start: 1...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  with-pic  "
+       style="background-image: url(/img/slt11.jpg)" 
+      href="2024/05/22/RUST%E6%95%B4%E7%90%862-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" 
+    >
+       
+      <div class="overlay">
+        <i class="fa-solid fa-angle-right with-pic"></i>
+      </div>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
    
 
 
@@ -1009,249 +1223,6 @@ AAA(非压缩...
     <a class="right-panel  with-pic  "
        style="background-image: url(/img/slt3.jpg)" 
       href="2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%803%EF%BC%9A%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" 
-    >
-       
-      <div class="overlay">
-        <i class="fa-solid fa-angle-right with-pic"></i>
-      </div>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-汇编语言2：80x86计算机组织" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%802%EF%BC%9A80x86%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E7%BB%87/">汇编语言2：80x86计算机组织</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-17T07:21:05.000Z" itemprop="datePublished">2024-05-17</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/">专业选修</a>><a class="meta-cate-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            196 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0/" rel="tag">课内学习</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              汇编语言2：80x86计算机组织
-tips：本文不涉及完全的知识梳理，只是个人向的易错点记录
-
-
-各个寄存器的作用
-
-
-
-寄存器
-主要用途
-
-
-
-AX
-累加器
-
-
-BX
-基址寄存器
-
-
-CX
-计数寄存器
-
-
-DX
-数据寄存器
-
-
-SP
-堆栈指针
-
-
-BP
-基址指针
-
-
-DI
-目的变址
-
-
-SI
-源变址
-
-
-CS
-段寄存器
-
-
-DS
-
-
-
-SS
-
-
-
-ES
-
-
-
-IP
-指令指针
-
-
-FLAGS
-标志寄存器
-
-
-
-
-
-
-存储器
-
-8086模式下存储空间有 ***1M** (*1024K)
-每个小段16字节，一共64k个小段首地址
-各段的分配允许重叠
-
-
-
-
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  with-pic  "
-       style="background-image: url(/img/slt2.jpg)" 
-      href="2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%802%EF%BC%9A80x86%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E7%BB%87/" 
-    >
-       
-      <div class="overlay">
-        <i class="fa-solid fa-angle-right with-pic"></i>
-      </div>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-汇编语言1：基础知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%801%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">汇编语言1：基础知识</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-17T06:46:59.000Z" itemprop="datePublished">2024-05-17</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/">专业选修</a>><a class="meta-cate-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            82 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0/" rel="tag">课内学习</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              汇编语言1：基础知识
-tips：本文不涉及完全的知识梳理，只是个人向的易错点记录
-
-
-BCD码
-
-压缩BCD码（4位二进制表示）
-非压缩BCD码（8位二进制表示）
-
-
-常用ASCII码
-
-
-
-
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  with-pic  "
-       style="background-image: url(/img/0.jpg)" 
-      href="2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%801%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" 
     >
        
       <div class="overlay">
