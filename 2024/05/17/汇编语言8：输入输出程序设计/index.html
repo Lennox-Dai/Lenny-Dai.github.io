@@ -20,12 +20,12 @@
   <link rel="preload" href="../../../../css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="../../../../css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="汇编语言8：输入输出程序设计 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   为什么使用DMA方式：  减少大批量数据传输时的cpu的开销 解决高速IO设备可能丢失数据问题，满足IO数据交换速度要求   DMA方式数据传输特点：  以数据块为单元 主要用于高速的IO设备 IO和CPU竞争使用寄存器   DMA数据传送控制过程：  数据传输前，CPU对DMA控制器中控制寄存器初始化">
+  <meta name="description" content="汇编语言8：输入输出程序设计  tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   为什么使用DMA方式：  减少大批量数据传输时的cpu的开销 解决高速IO设备可能丢失数据问题，满足IO数据交换速度要求  DMA方式数据传输特点：  以数据块为单元 主要用于高速的IO设备 IO和CPU竞争使用寄存器  DMA数据传送控制过程：  数据传输前，CPU">
 <meta property="og:type" content="article">
 <meta property="og:title" content="汇编语言8：输入输出程序设计">
 <meta property="og:url" content="https://lenny-dai.github.io/2024/05/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%808%EF%BC%9A%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Vitamind的私货博客（欢迎投喂七宫图片）">
-<meta property="og:description" content="汇编语言8：输入输出程序设计 tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   为什么使用DMA方式：  减少大批量数据传输时的cpu的开销 解决高速IO设备可能丢失数据问题，满足IO数据交换速度要求   DMA方式数据传输特点：  以数据块为单元 主要用于高速的IO设备 IO和CPU竞争使用寄存器   DMA数据传送控制过程：  数据传输前，CPU对DMA控制器中控制寄存器初始化">
+<meta property="og:description" content="汇编语言8：输入输出程序设计  tips：本文不涉及完全的知识梳理，只是个人向的易错点记录   为什么使用DMA方式：  减少大批量数据传输时的cpu的开销 解决高速IO设备可能丢失数据问题，满足IO数据交换速度要求  DMA方式数据传输特点：  以数据块为单元 主要用于高速的IO设备 IO和CPU竞争使用寄存器  DMA数据传送控制过程：  数据传输前，CPU">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lenny-dai.github.io/img/slt8.jpg">
 <meta property="article:published_time" content="2024-05-17T14:13:35.000Z">
@@ -160,19 +160,29 @@
     <div class="widget">
       <h3 class="widget-title">分类</h3>
       <div class="category-box">
+            <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E5%BF%85%E4%BF%AE/">
+                专业必修
+                <div class="category-count">2</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E5%BF%85%E4%BF%AE/ICS/">
+                ICS
+                <div class="category-count">2</div>
+            </a>
+        </div></div>
             <a class="category-link" href="categories/%E7%A7%91%E7%A0%94%E8%AE%AD%E7%BB%83/">
                 科研训练
-                <div class="category-count">2</div>
+                <div class="category-count">1</div>
             </a>
         <div class="children"><div class="category-box">
             <a class="category-link" href="categories/%E7%A7%91%E7%A0%94%E8%AE%AD%E7%BB%83/LUD/">
                 LUD
-                <div class="category-count">2</div>
+                <div class="category-count">1</div>
             </a>
         <div class="children"><div class="category-box">
             <a class="category-link" href="categories/%E7%A7%91%E7%A0%94%E8%AE%AD%E7%BB%83/LUD/Data-Attribution-with-Influence-Function/">
                 Data Attribution with Influence Function
-                <div class="category-count">2</div>
+                <div class="category-count">1</div>
             </a>
         </div></div></div></div>
             <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/">
@@ -180,14 +190,14 @@
                 <div class="category-count">12</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/RUST%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                RUST程序设计
-                <div class="category-count">2</div>
-            </a>
-        
             <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">
                 汇编语言
                 <div class="category-count">9</div>
+            </a>
+        
+            <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/RUST%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+                RUST程序设计
+                <div class="category-count">2</div>
             </a>
         
             <a class="category-link" href="categories/%E4%B8%93%E4%B8%9A%E9%80%89%E4%BF%AE/%E7%BA%BF%E4%B8%8A%E8%AF%BE%E7%A8%8B/">
@@ -204,7 +214,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/NLP/" rel="tag">NLP</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0/" rel="tag">课内学习</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="tag">课外学习</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/ICS/" rel="tag">ICS</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/NLP/" rel="tag">NLP</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/%E8%AF%BE%E5%86%85%E5%AD%A6%E4%B9%A0/" rel="tag">课内学习</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="../../../../tags/%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="tag">课外学习</a></li></ul>
     </div>
   </div>
 
@@ -223,7 +233,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_clwm51dof000qdwvkgygu7s3f">
+      <a class="article-gallery-img" rel="gallery_cm7bdfv9j000ux0vk87xd8zk7">
         <img src="../../../../img/slt8.jpg" itemprop="image">
       </a>
     
@@ -268,89 +278,81 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="汇编语言8：输入输出程序设计"><a href="#汇编语言8：输入输出程序设计" class="headerlink" title="汇编语言8：输入输出程序设计"></a>汇编语言8：输入输出程序设计</h1><blockquote>
+          <h1 id="汇编语言8输入输出程序设计">汇编语言8：输入输出程序设计</h1>
+<blockquote>
 <p>tips：本文不涉及完全的知识梳理，只是个人向的易错点记录</p>
 </blockquote>
 <ul>
 <li><p><strong>为什么使用DMA方式：</strong></p>
-<ol>
+<ol type="1">
 <li>减少大批量数据传输时的cpu的开销</li>
 <li>解决高速IO设备可能丢失数据问题，满足IO数据交换速度要求</li>
-</ol>
-</li>
+</ol></li>
 <li><p><strong>DMA方式数据传输特点：</strong></p>
-<ol>
+<ol type="1">
 <li>以数据块为单元</li>
 <li>主要用于高速的IO设备</li>
 <li>IO和CPU竞争使用寄存器</li>
-</ol>
-</li>
+</ol></li>
 <li><p><strong>DMA数据传送控制过程</strong>：</p>
-<ol>
+<ol type="1">
 <li>数据传输前，CPU对DMA控制器中控制寄存器初始化</li>
 <li>DMA控制器控制设备与存储器直接进行块数据交换</li>
 <li>数据传送结束后，CPU进行后处理</li>
-</ol>
-</li>
+</ol></li>
 <li><p><strong>SOUND子程序：</strong></p>
 <blockquote>
 <p>注意点：</p>
-<ol>
+<ol type="1">
 <li>先将最后两位置零</li>
 <li>XOR AL, 00000010B</li>
 </ol>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">title final3</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line"></span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment at 0A000h</span><br><span class="line">    dw 128 dup(0)</span><br><span class="line">    tos label word</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    assume ds:data, cs:code, ss:stack</span><br><span class="line"></span><br><span class="line">    main proc far</span><br><span class="line">        mov ax, stack</span><br><span class="line">        mov ss, ax</span><br><span class="line">        mov sp, offset tos</span><br><span class="line"></span><br><span class="line">        mov cx, 1000</span><br><span class="line">        mov bx, 9000</span><br><span class="line">        call sound</span><br><span class="line"></span><br><span class="line">        mov ax, 4c00h</span><br><span class="line">        int 21h</span><br><span class="line">    main endp</span><br><span class="line"></span><br><span class="line">    sound proc near</span><br><span class="line">        push ax</span><br><span class="line">        push dx</span><br><span class="line">        mov dx, cx</span><br><span class="line">        in al, 61h</span><br><span class="line">        and al, 11111100B</span><br><span class="line">        trig:</span><br><span class="line">            xor al, 00000010B</span><br><span class="line">            out 61h, al</span><br><span class="line">            mov cx, bx</span><br><span class="line">        delay:</span><br><span class="line">            loop delay</span><br><span class="line">            dec dx</span><br><span class="line">            jne trig</span><br><span class="line">            pop dx</span><br><span class="line">            pop ax</span><br><span class="line">            ret</span><br><span class="line">    sound endp</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end main</span><br></pre></td></tr></table></figure>
-
-
-
-
-</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">title final3</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line"></span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment at 0A000h</span><br><span class="line">    dw 128 dup(0)</span><br><span class="line">    tos label word</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    assume ds:data, cs:code, ss:stack</span><br><span class="line"></span><br><span class="line">    main proc far</span><br><span class="line">        mov ax, stack</span><br><span class="line">        mov ss, ax</span><br><span class="line">        mov sp, offset tos</span><br><span class="line"></span><br><span class="line">        mov cx, 1000</span><br><span class="line">        mov bx, 9000</span><br><span class="line">        call sound</span><br><span class="line"></span><br><span class="line">        mov ax, 4c00h</span><br><span class="line">        int 21h</span><br><span class="line">    main endp</span><br><span class="line"></span><br><span class="line">    sound proc near</span><br><span class="line">        push ax</span><br><span class="line">        push dx</span><br><span class="line">        mov dx, cx</span><br><span class="line">        in al, 61h</span><br><span class="line">        and al, 11111100B</span><br><span class="line">        trig:</span><br><span class="line">            xor al, 00000010B</span><br><span class="line">            out 61h, al</span><br><span class="line">            mov cx, bx</span><br><span class="line">        delay:</span><br><span class="line">            loop delay</span><br><span class="line">            dec dx</span><br><span class="line">            jne trig</span><br><span class="line">            pop dx</span><br><span class="line">            pop ax</span><br><span class="line">            ret</span><br><span class="line">    sound endp</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end main</span><br></pre></td></tr></table></figure></li>
 <li><p><strong>8259A的中断屏蔽寄存器</strong></p>
-<p><img src="0.png" alt="0"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MOV AL, 11111101B</span><br><span class="line">OUT 21H, AL</span><br></pre></td></tr></table></figure>
-
-
-</li>
+<figure>
+<img src="0.png" alt="0">
+<figcaption aria-hidden="true">0</figcaption>
+</figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MOV AL, 11111101B</span><br><span class="line">OUT 21H, AL</span><br></pre></td></tr></table></figure></li>
 <li><p><strong>软件中断类型：</strong></p>
-<ol>
+<ol type="1">
 <li>程序中的中断指令</li>
 <li>CPU的某些运行结果</li>
 <li>调试程序设置的中断</li>
-</ol>
-</li>
+</ol></li>
 <li><p><strong>X86内存分配</strong></p>
-<p><img src="1.png" alt="1"></p>
-</li>
+<figure>
+<img src="1.png" alt="1">
+<figcaption aria-hidden="true">1</figcaption>
+</figure></li>
 <li><p><strong>设置中断向量&amp;取中断向量：</strong></p>
-<p><img src="2.png" alt="2"></p>
-</li>
+<figure>
+<img src="2.png" alt="2">
+<figcaption aria-hidden="true">2</figcaption>
+</figure></li>
 <li><p><strong>中断过程：</strong></p>
-<ol>
+<ol type="1">
 <li><p>中断响应</p>
 <blockquote>
 <p>CPU自动完成如下操作：</p>
-<ol>
+<ol type="1">
 <li>取中断类型号</li>
 <li>标志寄存器入栈</li>
 <li>CS、IP入栈</li>
 <li>IF、TF置零</li>
-<li>转中断服务处理程序入口地址：<ul>
+<li>转中断服务处理程序入口地址：
+<ul>
 <li>从中断向量表中取4*N单元的字内容 送 IP</li>
 <li>从中断向量表中取4*N + 2单元的字内容 送 CS</li>
-</ul>
-</li>
+</ul></li>
 </ol>
-</blockquote>
-</li>
-<li><p>中断处理</p>
-</li>
-<li><p>中断返回</p>
-</li>
-</ol>
-</li>
+</blockquote></li>
+<li><p>中断处理</p></li>
+<li><p>中断返回</p></li>
+</ol></li>
 <li><p><strong>一般中断处理程序设计格式：</strong></p>
-<ol>
+<ol type="1">
 <li>保存现场</li>
 <li>开中断</li>
 <li>中断处理程序主体部分</li>
@@ -358,8 +360,7 @@
 <li>关中断</li>
 <li>恢复现场</li>
 <li>中断返回（IRET）</li>
-</ol>
-</li>
+</ol></li>
 <li><p><strong>1CH中断使用示例：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">title final4</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">    count dw 1</span><br><span class="line">    msg db &#x27;The bell is ringing&#x27;, 0dh, 0ah, &#x27;$&#x27;</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment at 0A000h</span><br><span class="line">    dw 128 dup(0)</span><br><span class="line">    tos label word</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    assume ds:data, cs:code, ss:stack</span><br><span class="line">    main proc far</span><br><span class="line">        mov ax, stack</span><br><span class="line">        mov ss, ax</span><br><span class="line">        mov sp, offset tos</span><br><span class="line">        mov ax, data</span><br><span class="line">        mov ds, ax</span><br><span class="line"></span><br><span class="line">        ; mov dx, offset msg</span><br><span class="line">        ; mov ah, 09h</span><br><span class="line">        ; int 21h</span><br><span class="line"></span><br><span class="line">        mov al, 1ch</span><br><span class="line">        mov ah, 35h</span><br><span class="line">        int 21h</span><br><span class="line">        push es</span><br><span class="line">        push bx</span><br><span class="line">        push ds</span><br><span class="line"></span><br><span class="line">        mov dx, offset ring</span><br><span class="line">        mov ax, seg ring</span><br><span class="line">        mov ds, ax</span><br><span class="line">        mov al, 1ch</span><br><span class="line">        mov ah, 25h</span><br><span class="line">        int 21h</span><br><span class="line">        pop ds</span><br><span class="line"></span><br><span class="line">        in al, 21h</span><br><span class="line">        and al, 11111110b</span><br><span class="line">        out 21h, al</span><br><span class="line"></span><br><span class="line">        sti</span><br><span class="line"></span><br><span class="line">        mov di, 20000</span><br><span class="line">        delay:</span><br><span class="line">            mov si, 30000</span><br><span class="line">        delay1:</span><br><span class="line">            dec si</span><br><span class="line">            jnz delay1</span><br><span class="line">            dec di</span><br><span class="line">            jnz delay</span><br><span class="line"></span><br><span class="line">        cli</span><br><span class="line">        pop dx</span><br><span class="line">        pop ds</span><br><span class="line">        mov al, 1ch</span><br><span class="line">        mov ah, 25h</span><br><span class="line">        int 21h</span><br><span class="line"></span><br><span class="line">        mov ax, 4c00h</span><br><span class="line">        int 21h</span><br><span class="line">    main endp</span><br><span class="line"></span><br><span class="line">    ring proc near</span><br><span class="line">        push ds</span><br><span class="line">        push ax</span><br><span class="line">        push cx</span><br><span class="line">        push dx</span><br><span class="line"></span><br><span class="line">        mov ax, data</span><br><span class="line">        mov ds, ax</span><br><span class="line">        sti</span><br><span class="line">        dec count</span><br><span class="line">        jne exit</span><br><span class="line"></span><br><span class="line">        mov dx, offset msg</span><br><span class="line">        mov ah, 09h</span><br><span class="line">        int 21h</span><br><span class="line"></span><br><span class="line">        mov dx, 100</span><br><span class="line">        in al, 61h</span><br><span class="line">        and al, 0fch</span><br><span class="line"></span><br><span class="line">        sound:</span><br><span class="line">            xor al, 2</span><br><span class="line">            out 61h, al</span><br><span class="line">            mov cx, 1400h</span><br><span class="line"></span><br><span class="line">        wait1:</span><br><span class="line">            loop wait1</span><br><span class="line">            dec dx</span><br><span class="line">            jne sound</span><br><span class="line">            mov count, 182</span><br><span class="line"></span><br><span class="line">        exit:</span><br><span class="line">            cli</span><br><span class="line"></span><br><span class="line">        pop dx</span><br><span class="line">        pop cx</span><br><span class="line">        pop ax</span><br><span class="line">        pop ds</span><br><span class="line">        iret</span><br><span class="line">    ring endp</span><br><span class="line">code ends</span><br><span class="line">end main</span><br></pre></td></tr></table></figure></li>
 </ul>
@@ -416,7 +417,7 @@
   
   <div id="footer-info" class="inner">
     
-    &copy; 2024 Vitamind<br>
+    &copy; 2025 Vitamind<br>
     Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
   </div>
 </footer>
